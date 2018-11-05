@@ -93,16 +93,32 @@ function splitMimic(string, seperator) {
   //}
 
   let index = string.indexOf(seperator);
-  if(index < 0) {
+  if (index < 0) {
     return [string];
   }
 
-  return [string.slice(0, index)].concat(splitMimic(string.slice(index + seperator.length), seperator));
+  return [string.slice(0, index)].concat(
+    splitMimic(string.slice(index + seperator.length), seperator)
+  );
 }
 
 let cool = 'we-aare-agreat';
 console.log(splitMimic(cool, '-a'));
 
+// Factorial
+//input number
+//output value of number multiplied by each number between itself and one
+//recursive input number -1
+//recursive output number * number -1
 
+//input 5
+// output 120
 
+function factorial(num) {
+  if (num === 1) {
+    return num;
+  }
+  return num * factorial(num - 1);
+}
 
+console.log(factorial(5));
