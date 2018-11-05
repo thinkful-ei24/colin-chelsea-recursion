@@ -81,3 +81,28 @@ function triangularNum(currentPositionNum) {
 console.log(triangularNum(6));
 //input 4
 // output 10
+
+//input is going to be a string
+//output is going to be an array split by characters
+//recursive input individual character of the original string
+//recursive output will be that character pushed into an array
+
+function splitMimic(string, seperator) {
+  //if(!string.length) {
+  //  return [];
+  //}
+
+  let index = string.indexOf(seperator);
+  if(index < 0) {
+    return [string];
+  }
+
+  return [string.slice(0, index)].concat(splitMimic(string.slice(index + seperator.length), seperator));
+}
+
+let cool = 'we-aare-agreat';
+console.log(splitMimic(cool, '-a'));
+
+
+
+
