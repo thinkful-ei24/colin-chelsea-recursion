@@ -45,3 +45,20 @@ function arrayDouble(arr) {
 }
 
 console.log(arrayDouble([1, 2, 3]));
+
+//input will be a string
+//output will be a string but backwards
+//recursive input will be a character
+//recursive output will be an array
+
+function reverseStr(str){
+  if(!str.length){
+    return '';
+  }
+
+  return reverseStr(str.slice(1)) + str[0];
+}
+
+let string = 'colin AND chelsea';
+console.log(string);
+console.log(reverseStr(string));
