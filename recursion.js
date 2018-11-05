@@ -122,3 +122,26 @@ function factorial(num) {
 }
 
 console.log(factorial(5));
+
+//Fibonacci
+//input nth fibonacci position
+//output the number value of n + (n-1) fibonacci position
+//recursive input current position number (n -1)
+//recursive output value of fibonacci number (n - 1)
+
+//input 7
+//output 13
+
+function fibonacci(position) {
+  if (position <= 0) {
+    return 0;
+  }
+
+  if (position <= 2) {
+    return 1;
+  }
+
+  return fibonacci(position - 1) + fibonacci(position - 2);
+}
+
+console.log(fibonacci(7));
