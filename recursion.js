@@ -51,8 +51,8 @@ console.log(arrayDouble([1, 2, 3]));
 //recursive input will be a character
 //recursive output will be an array
 
-function reverseStr(str){
-  if(!str.length){
+function reverseStr(str) {
+  if (!str.length) {
     return '';
   }
 
@@ -62,3 +62,22 @@ function reverseStr(str){
 let string = 'colin AND chelsea';
 console.log(string);
 console.log(reverseStr(string));
+
+//nth Triangular Number
+// input will be a position number
+// output will be a triangular number
+// recursive input will be a value of the current position - 1
+// recursive output will be a the value
+
+// lastValue + currentPositionNum
+
+function triangularNum(currentPositionNum) {
+  if (currentPositionNum === 0) {
+    return 0;
+  }
+  return triangularNum(currentPositionNum - 1) + currentPositionNum;
+}
+
+console.log(triangularNum(6));
+//input 4
+// output 10
