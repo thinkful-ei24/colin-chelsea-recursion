@@ -1,3 +1,4 @@
+'use strict';
 //What is the input to the program
 //
 //What is the output of the program
@@ -17,15 +18,30 @@
 //output of each recursive call is the string "number - another sheep jump over the fence"
 
 function countingSheep(num) {
-  if(num === 0) {
+  if (num === 0) {
     return '';
   }
 
   let str = `${num} - Another sheep jumps over the fence \n`;
-  console.log(str);
   return str + countingSheep(num - 1);
-
 }
 
-countingSheep(3);
+console.log(countingSheep(3));
 
+//Array Double
+
+//input is an array of numbers
+//output is original array of numbers values doubled
+// input to each recursive call will be one value from the array
+// output to each recursive call will be the double of that value and array minus value you just doubled
+
+function arrayDouble(arr) {
+  if (!arr.length) {
+    return [];
+  }
+
+  let doubledNum = arr[0] * 2;
+  return [doubledNum, ...arrayDouble(arr.slice(1))];
+}
+
+console.log(arrayDouble([1, 2, 3]));
